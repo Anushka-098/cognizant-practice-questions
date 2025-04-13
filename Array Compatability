@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class Static{
+public static void invalid(int size){
+    if(size<=0){
+        System.out.print("Invalid");
+        System.exit(0);
+    }
+}
+
+public static boolean valid(int[] arr1,int[] arr2){
+    if(arr1.length!=arr2.length){
+        return false;
+    }
+    for(int i=0;i<arr1.length;i++){
+        if(arr1[i]<arr2[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+public static void main(String[] args){
+  Scanner scanner=new Scanner(System.in);
+  int m,n;
+  int[] arr1,arr2;
+  System.out.println("Enter the size of 1st array");
+  m=scanner.nextInt();
+  invalid(m);
+  arr1 =new int[m];
+   System.out.println("Enter the elements of 1st array");
+   for(int i=0;i<m;i++){
+       arr1[i]=scanner.nextInt();
+   }
+    
+  System.out.println("Enter the size of 2nd array");
+  n=scanner.nextInt();
+  invalid(n);
+  arr2=new int[n];
+  System.out.println("Enter the elements of 2nd array");
+  for(int j=0;j<n;j++){
+      arr2[j]=scanner.nextInt();
+  }
+  
+  if(valid(arr1,arr2)){
+      System.out.println("Compatable");
+      
+  }else{
+      System.out.println("Not comptable");
+  }
+  
+
+ 
+} 
+    
+}
