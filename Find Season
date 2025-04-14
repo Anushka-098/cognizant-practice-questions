@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.util.StringJoiner;
+
+class Season{
+    private static boolean isSpring(int month){
+        return month>=3 && month<=5;
+    }
+        private static boolean isSummer(int month){
+        return month>=6 && month<=8;
+    }
+        private static boolean isAutumn(int month){
+        return month>=9 && month<=11;
+    }
+        private static boolean isWinter(int month){
+        return month==1 || month==2 || month==12;
+    }
+    public static void main(String[] args){
+        int n;
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the month:");
+        n=scanner.nextInt();
+
+        System.out.print("Season:");
+        if(n>=13){
+            System.out.println("Invalid month");
+        }
+        else{
+            if(isSpring(n)){
+                System.out.println("Spring");
+            }else if(isSummer(n)){
+                System.out.println("Summer");
+            }else if(isAutumn(n)){
+                System.out.println("Autumn");
+            }else if(isWinter(n)){
+                System.out.println("Winter");
+            }
+        }
+       
+    }   
+}
