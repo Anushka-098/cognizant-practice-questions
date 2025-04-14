@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class Season{
+   public static void main(String[] args){
+       String word,find,replace;
+       Scanner scanner=new Scanner(System.in);
+       System.out.println("Enter the string:");
+       word=scanner.nextLine();
+       
+       System.out.println("Enter the word to be searched:");
+       find=scanner.nextLine();
+       
+       System.out.println("Enter the word to be replaced:");
+       replace=scanner.nextLine();
+       
+       String replacesentence=word.replace(find,replace);
+       
+       if(replacesentence.equals(word)){
+           System.out.print("The word"+find+"not found");
+       }else{
+            System.out.print(replacesentence);
+       }
+       
+       
+   }
+}
