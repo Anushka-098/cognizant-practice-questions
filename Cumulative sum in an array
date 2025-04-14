@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.StringJoiner;
+class Main{
+    
+    public static void sum(int [] arr,int size){
+        StringJoiner stringjoiner=new StringJoiner(" ");
+        int sum=0;
+        int i=0;
+        while(i<size){
+            sum+=arr[i];
+            stringjoiner.add(String.valueOf(sum));
+           i++;
+        }
+        System.out.println(stringjoiner.toString());
+    }
+    public static void main(String[] args){
+    Scanner scanner =new Scanner(System.in);
+    int size;
+    int[] arr;
+    System.out.println("Enter number of elements");
+    size=scanner.nextInt();
+    if(size<=0){
+        System.out.println("Invalid Range");
+        System.exit(0);
+    }
+    System.out.println("Enter the elements");
+   
+    arr=new int[size];
+    for(int i=0;i<size;i++){
+        arr[i]=scanner.nextInt();
+    }
+    sum(arr,size);
+    
+    }
+}
