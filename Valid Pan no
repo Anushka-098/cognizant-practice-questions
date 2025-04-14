@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+class Validpan{
+
+   public static void main(String[] args){
+      Scanner scanner=new Scanner(System.in);
+      System.out.println("Enter the PAN no:");
+      String pan=scanner.next();
+       
+      Pattern pattern=Pattern.compile("^[A-Z]{5}\\d{4}[A-Z]$");
+      
+      Matcher matcher=pattern.matcher(pan);
+      
+      if(matcher.matches()){
+          System.out.print("Valid PAN no");
+      }else{
+          System.out.println("InValid PAN no");
+      }
+      
+       
+   }
+}
