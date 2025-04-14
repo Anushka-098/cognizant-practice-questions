@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class Main {
+   public static int Total(int a,int b,int c){
+       int totalp=a*100;
+       int totalpu=b*20;
+       int totalc=c*10;
+       System.out.println("Bill Details");
+       System.out.print("No of pizzas:");
+       System.out.println(a);
+       System.out.print("No of puffs:");
+       System.out.println(b);
+       System.out.print("No of cooldrinks:");
+       System.out.println(c);
+       int total_price=totalp+totalpu+totalc;
+       return total_price;
+   }
+    
+    public static void main(String[] args) {
+       Scanner scanner=new Scanner(System.in); 
+       int p,pu,c;
+        System.out.print("Enter the no of pizzas bought:");
+        p=scanner.nextInt();
+        System.out.print("Enter the no of puffs bought:");
+        pu=scanner.nextInt();
+        System.out.print("Enter the no of cool drinks bought:");
+        c=scanner.nextInt();
+        
+
+        int ans;
+        ans=Total(p,pu,c);
+        System.out.print("Total price=");
+        System.out.println(ans);
+        System.out.println("ENJOY THE SHOW!!!");
+        
+    }
+}
