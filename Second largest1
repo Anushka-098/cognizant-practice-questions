@@ -1,0 +1,39 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> a = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter elements (type -1 to stop):");
+        while (true) {
+            int num = sc.nextInt();
+            if (num == -1) break;
+            a.add(num);
+        }
+
+        if (a.size() < 2) {
+            System.out.println("Not enough elements to find second largest.");
+            return;
+        }
+
+        int largest = Integer.MIN_VALUE;
+        int slargest = Integer.MIN_VALUE;
+
+        for (int num : a) {
+            if (num > largest) {
+                slargest = largest;
+                largest = num;
+            } else if (num > slargest && num != largest) {
+                slargest = num;
+            }
+        }
+
+        System.out.println("Largest = " + largest);
+        if (slargest == Integer.MIN_VALUE) {
+            System.out.println("Second largest does not exist (all elements might be same).");
+        } else {
+            System.out.println("Second Largest = " + slargest);
+        }
+    }
+}
