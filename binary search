@@ -1,44 +1,43 @@
 import java.util.*;
-class Main {
-    public static int binarysearch(ArrayList<Integer>a,int key){
+
+class Main{
+    public static int binary(int[] arr,int bin){
         int start=0;
-        int end=a.size()-1;
-        
+        int end=arr.length-1;
         
         while(start<=end){
-            int mid=(start+end)/2;
-            int midval=a.get(mid);
-            if(midval==key){
+            int mid=start+(end-start)/2;
+            
+            if(arr[mid]==bin){
                 return mid;
-            }else if(midval<key){
-                   start=mid+1;
-            }else{
+            }else if(arr[mid]>bin){
                 end=mid-1;
-             }
+                
+            }else{
+                start=mid+1;
+                
+            }
+        }
+        return -1;
     }
-    return -1;
-    }
-    public static void main(String[] args) {
-        ArrayList<Integer> a=new ArrayList<>();
-        Scanner sc=new Scanner(System.in);
+    
+    public static void main(String[] args){
+        int [] arr={2,3,6,8,9,5};
         
-        System.out.println("enter elements:");
-        for(int i=0;i<5;i++){
-            a.add(sc.nextInt());
+        Arrays.sort(arr);
+        
+        int bin=6;
+      
+        
+        int result=binary(arr,bin);
+        if(result!=-1){
+            System.out.println("element found at index "+result);
+        }else{
+            System.out.println("element not found");
         }
         
-        Collections.sort(a);
-        System.out.print("enter key:");
-        int key=sc.nextInt();
-        
-        int index=binarysearch(a,key);
-        
-        if (index != -1) {
-            System.out.println("Found at index " + index);
-        } else {
-            System.out.println("Not found");
-        }
-        
-       
     }
 }
+
+
+
