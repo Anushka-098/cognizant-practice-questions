@@ -1,39 +1,39 @@
 import java.util.*;
 
-class Main {
-    public static void main(String[] args) {
-        ArrayList<Integer> a = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter elements (type -1 to stop):");
-        while (true) {
-            int num = sc.nextInt();
-            if (num == -1) break;
-            a.add(num);
+class Main{
+    public static int Slargest(int[] arr){
+        
+        if(arr.length<2){
+            System.out.println("Array must contain atleast two numbers");
+            return -1;
         }
-
-        if (a.size() < 2) {
-            System.out.println("Not enough elements to find second largest.");
-            return;
-        }
-
-        int largest = Integer.MIN_VALUE;
-        int slargest = Integer.MIN_VALUE;
-
-        for (int num : a) {
-            if (num > largest) {
-                slargest = largest;
-                largest = num;
-            } else if (num > slargest && num != largest) {
-                slargest = num;
+        int largest=Integer.MIN_VALUE;
+        int slargest=Integer.MIN_VALUE;
+        
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>largest){
+                slargest=largest;
+                largest=arr[i];
+            }else if(arr[i]<largest && arr[i]>slargest){
+                slargest=arr[i];
             }
         }
-
-        System.out.println("Largest = " + largest);
-        if (slargest == Integer.MIN_VALUE) {
-            System.out.println("Second largest does not exist (all elements might be same).");
-        } else {
-            System.out.println("Second Largest = " + slargest);
+        
+        if(slargest==Integer.MIN_VALUE){
+            System.out.println("No Second largest number is found");
+            return -1;
+        }
+        return slargest;
+        
+    }
+    public static void main (String[] args){
+        int [] arr={78 ,32,66,89,76};
+      
+        int result=Slargest(arr);
+        if(result!=-1){
+            System.out.println("Second largest number is "+result);
+        }else{
+            System.out.println("Second largest number is not found");
         }
     }
 }
