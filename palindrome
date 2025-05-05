@@ -1,23 +1,17 @@
-import java.util.Scanner;
-
-class Palindrome{
-
-   public static void main(String[] args){
-      Scanner scanner=new Scanner(System.in);
-      int num=scanner.nextInt();
-       int sum=0,r;
-        int temp=num;
-        while(num!=0){
-            r=num%10;
-            sum=sum*10+r;
-            num/=10;
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        String s="Anna";
+        s=s.toLowerCase();
+        char [] c=s.toCharArray();
+        String check="";
+        for(int i=c.length-1;i>=0;i--){
+            check+=c[i];
         }
-      if(temp==sum){
-          System.out.println("palindrome");
-      }else{
-          System.out.println("no palindrome");
-      }
-      
-       
-   }
+        if(s.equals(check)){
+            System.out.println("Palindrome");
+        }else{
+            System.out.println("not Palindrome");
+        }
+    }
 }
